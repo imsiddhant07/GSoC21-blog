@@ -16,7 +16,4 @@ Had my first meet (virtual ofcourse) with Mentors, one of the mentors could not 
 
 
 
-### Next up we have Community meeting planned on 3rd June '21.
-
-
-Will keep this updated as I go along, thank you :)
+### Next up we have Community meeting planned on 3rd June '21. Will keep this updated as I go along, thank you :)

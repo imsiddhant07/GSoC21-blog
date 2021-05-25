@@ -9,9 +9,12 @@ Never been this excited, the results for GSoC'21 were announced today. I'll be w
 
 
 ## 19/05/2021 
-Had my first meet (virtual ofcourse) with Mentors, one of the mentors could not join due to some health issues. They are really very friendly and helpful. Some of the meeting highlights:
+Had my first meet (virtual ofcourse) with Mentors, one of the mentors could not join due to some health issues. They are really very friendly and helpful. Overall meeting:
+
 -> Firstly a nice and long introduction
+
 -> Discussed the longterm vision 
+
 -> Not much discussion on workflow as the timeline on my proposal was ok.
 
 

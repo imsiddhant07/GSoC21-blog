@@ -19,4 +19,9 @@ Had my first meet (virtual ofcourse) with Mentors, one of the mentors could not 
 
 
 
-### Next up we have Community meeting planned on 3rd June '21. Will keep this updated as I go along, thank you :)
+## 07/06/2021 
+Officially starting with the coding period. 
+
+| Serial no. | Coding period | Updated on | Overview |
+|------------|---------------|------------|----------|
+|01.|[Week 1](https://github.com/imsiddhant07/Neural-QA-Model-for-DBpedia/edit/main/week1.md)|11/06/2021|Brief project overview, Syntax Aware Augmentation|

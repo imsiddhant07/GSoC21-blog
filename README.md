@@ -24,4 +24,4 @@ Officially starting with the coding period.
 
 | Serial no. | Coding period | Updated on | Overview |
 |------------|---------------|------------|----------|
-|01.|[Week 1](https://github.com/imsiddhant07/Neural-QA-Model-for-DBpedia/edit/main/week1.md)|11/06/2021|Brief project overview, Syntax Aware Augmentation|
+|01.|[Week 1](https://github.com/imsiddhant07/Neural-QA-Model-for-DBpedia/blob/main/week1.md)|11/06/2021|Brief project overview, Syntax Aware Augmentation|

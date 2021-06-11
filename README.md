@@ -20,7 +20,7 @@ Had my first meet (virtual ofcourse) with Mentors, one of the mentors could not 
 
 
 ## 07/06/2021 
-Officially starting with the coding period. 
+Officially starting with the coding period. The table below shall help you navigate smoothly through the weeks :)
 
 | Serial no. | Coding period | Updated on | Overview |
 |------------|---------------|------------|----------|

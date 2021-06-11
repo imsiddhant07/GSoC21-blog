@@ -1,6 +1,6 @@
 ---
 title: Week 1 (07/06/2021-13/06/2021)
-layout: jekyll
+theme: jekyll-theme-cayman
 filename: week1.md
 --- 
 

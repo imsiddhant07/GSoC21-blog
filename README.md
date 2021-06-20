@@ -25,3 +25,4 @@ Officially starting with the coding period. The table below shall help you navig
 | Serial no. | Coding period | Updated on | Overview |
 |------------|---------------|------------|----------|
 |01.|[Week 1](week1.md)|11/06/2021|Brief project overview, Syntax Aware Augmentation|
+|02.|[Week 2](week2.md)|11/06/2021|Syntax Aware Augmentation - Dependency parsing Tree|

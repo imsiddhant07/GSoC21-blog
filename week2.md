@@ -1,11 +1,5 @@
 
----
-title: Week 2 (14/06/2021-20/06/2021)
-theme: jekyll-theme-cayman
-filename: week2.md
 
-
---- 
 
 
 ##  Week 2 | 14/06/2021 - 20/06/2021 

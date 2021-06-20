@@ -47,4 +47,4 @@ P(S) = {p<sub>1</sub>, p<sub>2</sub>, .. p<sub>n</sub>}
 This week Experimented for both transition-based and graph-based dependency trees with an endterm moto for probabilities for word selection.
 
 
-Also I feel I have been a little sloppy with the work, I'll have to gear up :))
+Also I feel I have been a little sloppy with the work, I'll have to gear up :)

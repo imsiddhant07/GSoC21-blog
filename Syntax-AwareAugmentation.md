@@ -1,7 +1,7 @@
 ---
-title: Week 1 (07/06/2021-13/06/2021)
+title: Syntax-Aware Augmentation (07/06/2021-27/06/2021)
 theme: jekyll-theme-cayman
-filename: week1.md
+filename: Syntax-AwareAugmentation.md
 
 
 --- 

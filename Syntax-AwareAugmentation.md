@@ -44,12 +44,16 @@ P(S) = Softmax(Q(S))
 
 P(S) = {p<sub>1</sub>, p<sub>2</sub>, .. p<sub>n</sub>}
 
-**Dependency parsing** is the task of analyzing the syntactic depen-dency structure of a given input sentenceS. The output of a depen-dency parser is a dependency tree where the words of the input sen-tence are connected by typed dependency relations.
+### Dependency parsing
+is the task of analyzing the syntactic dependency structure of a given input sentence S. The output of a depen-dency parser is a dependency tree where the words of the input sentence are connected by typed dependency relations.
 
-Transition based approach to dependency parsing is motivated by a stack-based approach called shift-reduce parsing originally developed for analyzing programming languages. This classic approach is simple and elegant, em-ploying a context-free grammar,  a stack,  and a list of tokens to be parsed.
+Transition based approach to dependency parsing is motivated by a stack-based approach called shift-reduce parsing originally developed for analyzing programming languages. This classic approach is simple and elegant, employing a context-free grammar,  a stack,  and a list of tokens to be parsed.
 
 Graph-based approaches to dependency parsing search through the space of possibletrees for a given sentence for a tree (or trees) that maximize some score.   Thesemethods  encode  the  search  space  as  directed  graphs  and  employ  methods  drawnfrom graph theory to search the space for optimal solutions
 
 Sentences are majorly classified under projective and non-projective, in which the dependency lines do not intersect at any given section for the before one. Experimented for both transition-based and graph-based dependency trees with an endterm moto for probabilities for word selection. Came to conclusion for using Neural transition based parsing tree as it has obvious advantage over the parsing accuracy and execution time.
+
+The parsing gives us an output tree, which we use to find the depths and relative probabilites of words present in the sentence. A glance at the output tree for the sentence 
+> "What is the nationality of the guy gavriel kay which is also the  sovereign state of the françois langelier?"
 
 ![Dependency parsing tree](/assets/Tree.png)

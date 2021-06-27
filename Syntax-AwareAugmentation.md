@@ -7,7 +7,7 @@ filename: Syntax-AwareAugmentation.md
 --- 
 
 
-##  Week 1 | 07/06/2021 - 13/06/2021 
+
 
 ### Project overview
 
@@ -22,7 +22,7 @@ Also this is the 4th year for the project to be selected in Google Summer of Cod
 For the first 3 weeks (07/06/2021 - 27/06/2021) I shall be implementing "Syntax Aware Augmentation" as a resort of making the model robust to noise and extending the current state of dataset.
 
 
-### Syntax-Aware Augmentation
+## Syntax-Aware Augmentation | 07/06/2021 - 27/06/2021
 
 This technique is being incorporated with the main motive of increasing the robustness and accuracy of NSpM, along with extending the existing DBNQA dataset via Augmentation.
 

@@ -82,5 +82,8 @@ for "loader"
 top 5 words :
 > ('loader', 0.9999998807907104), ('operating', 0.6293714642524719), ('booting', 0.6258991360664368), ('firmware', 0.6177793145179749), ('device', 0.6041673421859741)
 
+Following the process, we create new pair of data.
 
-  
+Original Questions | Augmented Questions |
+----------|-------------------- |
+Is william b. ochiltree a member ofof binge v. smith? | Is william b. ochiltree the membership of binge v. smith? |

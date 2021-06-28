@@ -47,8 +47,7 @@ P(S) = {p<sub>1</sub>, p<sub>2</sub>, .. p<sub>n</sub>}
 ### Dependency parsing
 is the task of analyzing the syntactic dependency structure of a given input sentence S. The output of a depen-dency parser is a dependency tree where the words of the input sentence are connected by typed dependency relations.
 
-Transition based approach to dependency parsing is motivated by a stack-based approach called shift-reduce parsing originally developed for analyzing programming languages. This classic approach is simple and elegant, employing a context-free grammar,  a stack,  and a list of tokens to be parsed.
-
+Transition based approach to dependency parsing is motivated by a stack-based approach called shift-reduce parsing originally developed for analyzing programming languages. This classic approach is simple and elegant, employing a context-free grammar,  a stack,  and a list of tokens to be parsed. Whereas,
 Graph-based approaches to dependency parsing search through the space of possibletrees for a given sentence for a tree (or trees) that maximize some score.   Thesemethods  encode  the  search  space  as  directed  graphs  and  employ  methods  drawnfrom graph theory to search the space for optimal solutions
 
 Sentences are majorly classified under projective and non-projective, in which the dependency lines do not intersect at any given section for the before one. Experimented for both transition-based and graph-based dependency trees with an endterm moto for probabilities for word selection. Came to conclusion for using Neural transition based parsing tree as it has obvious advantage over the parsing accuracy and execution time.
@@ -57,3 +56,32 @@ The parsing gives us an output tree, which we use to find the depths and relativ
 > "What is the nationality of the guy gavriel kay which is also the  sovereign state of the françois langelier?"
 
 ![Dependency parsing tree](/assets/Tree.png)
+
+By getting the depth from the tree :
+>['What', 'is', 'the', 'nationality', 'of', 'danyon', 'loader', 'which', 'also', 'the', 'sovereign', 'state', 'waitomo', 'caves', 'hotel']
+>
+>[2, 1, 3, 2, 3, 5, 4, 2, 2, 3, 3, 2, 4, 0, 1]
+
+Using depths to calculate final probabilites :
+>['What', 'is', 'the', 'nationality', 'of', 'danyon', 'loader', 'which', 'also', 'the', 'sovereign', 'state', 'waitomo', 'caves', 'hotel']
+>
+>[0.87144306, 0.7, 0.95085018, 0.87144306, 0.95085018, 1.00603215, 0.98809904, 0.87144306, 0.87144306, 0.95085018,0.95085018, 0.87144306, 0.98809904, 0.7]
+
+Based on the length of the sentence we decide on the number of augmentations to be performed, accordingly selecting words with maximum probability "dayon" -> 1.00603215 & "loader" -> 0.98809904 (here, 2) and performing operations.
+
+### Replacement
+
+* Trained a word embedding (Word2Vec) on the Text8 corpus for obtaining the word vector for the selected words.
+* Made a search in the embeddings' dimensions (100-d for ours) around a fixed space with relative similar vectors.
+* Found the most similar words by comparing the cosine similarity for the vectors for words, with 1 being high and 0.5 realtively low. Selected the word with highest cosine sim. value.
+> for "loader"
+> 
+> embeddings : [ 2.87076589e-02  6.55337214e-01  1.83130503e-01  6.36373907e-02  1.72789529e-01 ... 2.46303618e-01  8.24105918e-01]
+>
+> top 5 words :
+> 
+> ('loader', 0.9999998807907104), ('operating', 0.6293714642524719), ('booting', 0.6258991360664368), ('firmware', 0.6177793145179749), ('device', 0.6041673421859741)
+
+
+
+  

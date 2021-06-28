@@ -74,14 +74,13 @@ Based on the length of the sentence we decide on the number of augmentations to 
 * Trained a word embedding (Word2Vec) on the Text8 corpus for obtaining the word vector for the selected words.
 * Made a search in the embeddings' dimensions (100-d for ours) around a fixed space with relative similar vectors.
 * Found the most similar words by comparing the cosine similarity for the vectors for words, with 1 being high and 0.5 realtively low. Selected the word with highest cosine sim. value.
-> for "loader"
-> 
+
+for "loader"
 > embeddings : [ 2.87076589e-02  6.55337214e-01  1.83130503e-01  6.36373907e-02  1.72789529e-01 ... 2.46303618e-01  8.24105918e-01]
 >
-> top 5 words :
-> 
-> ('loader', 0.9999998807907104), ('operating', 0.6293714642524719), ('booting', 0.6258991360664368), ('firmware', 0.6177793145179749), ('device', 0.6041673421859741)
 
+top 5 words :
+> ('loader', 0.9999998807907104), ('operating', 0.6293714642524719), ('booting', 0.6258991360664368), ('firmware', 0.6177793145179749), ('device', 0.6041673421859741)
 
 
   

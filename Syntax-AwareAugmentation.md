@@ -90,7 +90,7 @@ Is william b. ochiltree a member ofof binge v. smith? | Is william b. ochiltree 
 
 
 ### Dropout 
-Pretty straight forward, using the same probabilities we drop words from the sentence. Considering the length of the sentence we drop words.
+Pretty straight forward, using the same probabilities we drop words from the sentence. Considering the length of the sentence (threshold 13 words) we drop words accordingly.
 
 Original Questions | Augmented Questions |
 ----------|-------------------- |

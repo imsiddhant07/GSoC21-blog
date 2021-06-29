@@ -87,3 +87,13 @@ Following the process, we create new pair of data.
 Original Questions | Augmented Questions |
 ----------|-------------------- |
 Is william b. ochiltree a member ofof binge v. smith? | Is william b. ochiltree the membership of binge v. smith? |
+
+
+### Dropout 
+Pretty straight forward, using the same probabilities we drop words from the sentence. Considering the length of the sentence we drop words.
+
+Original Questions | Augmented Questions |
+----------|-------------------- |
+Is william b. ochiltree a member ofof binge v. smith? | Is william b. ochiltree   member ofof binge v. smith? |
+What are the sports played by the universities who also plays interscholastic league of honolulu? | What are the sports played by the universities who  plays interscholastic  of honolulu ? |
+

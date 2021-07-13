@@ -137,4 +137,11 @@ Give **me** list of people who were **the** first to climb a peak in the takayam
 
 Note how the 2nd, and 3rd example had to offer 13(or more)words, we dropped two words on the go.
 
+overall,
+|||
+|--|--|
+Input | data files (data.en and data.sparql) |
+output | data files (repalced/dropped)|
+|||
+
 check the code at [Neural-qa](https://github.com/dbpedia/neural-qa) concluding with, augmentation techniques are basically used to lend a hand to help train a machine learning model better given small size datasets. 

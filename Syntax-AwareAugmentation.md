@@ -110,21 +110,31 @@ top 5 words :
 
 Following the process, we create new pair of data.
 
+Via synonym replacement
 
 Original Questions | Augmented Questions |
 ----------|-------------------- |
-| | |
+Which training center of phyllis birkby has also **alumni** named roger hilsman  ?| Which training center of phyllis birkby has also graduates named roger hilsman  ?|
+Name the **university** located in urban area and has affiliations with aicte? | Name the université located in urban area and has affiliations with aicte ?|
+Which maintainer of riverside drive is also the **city** of usa final 1967 ? | Which maintainer of riverside drive is also the twon of usa final 1967 ?|
+Name some basketball players who  have played for bc brno? | Name some basketball players who  have played for bc brno?|
+
+In the last example we observe, actually nothing has been replaced. Which helps us take the technique with a pinch of salt that not all sentences will be replaced and augmented due the fact the not all sentences might have any common words whose synonyms are worth replacing them. 
 
 
 ### Dropout 
 * Pretty straight forward (syntax_aware.dropout), using the same probabilities we drop words from the sentence. Considering the length of the sentence (threshold 13 words) we drop words accordingly.
 * Threshold refers to the length of sentence taken into consideration, if the *length < threshold* we only drop single word with highest probability.
+* * Running a set of **100 samples** for Augmentation take time : **0.60-0.90 sec** (may vary from devices)
 
 Original Questions | Augmented Questions |
 ----------|-------------------- |
 does superstar hair challenge have more episodes **than** absolutely fabulous? |does superstar hair challenge have more episodes  absolutely fabulous?|
 does **the** new son amores series have more episodes **than** the old one? | does  new son amores series have more episodes the old one?|
 Give me **the** count of newspaper whose language is greek language and **headquartered** at syria ? | Give me  count of newspaper whose language is greek language and   at syria ?
-What is the life stance of **the** ethnic groups related to brazilian american ? | What is the life stance of   ethnic groups related to brazilian american ?
+What is the life stance of **the** ethnic groups related to brazilian american ? | What is the life stance of   ethnic groups related to brazilian american ?|
+Give **me** list of people who were **the** first to climb a peak in the takayama? | Give   list of people who were   first to climb a peak in the takayama?|
 
 Note how the 2nd, and 3rd example had to offer 13(or more)words, we dropped two words on the go.
+
+check the code at [Neural-qa](https://github.com/dbpedia/neural-qa) concluding with, augmentation techniques are basically used to lend a hand to help train a machine learning model better given small size datasets. 

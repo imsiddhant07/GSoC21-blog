@@ -52,8 +52,26 @@ Graph-based approaches to dependency parsing search through the space of possibl
 
 Sentences are majorly classified under projective and non-projective, in which the dependency lines do not intersect at any given section for the before one. Experimented for both transition-based and graph-based dependency trees with an endterm moto for probabilities for word selection. Came to conclusion for using Neural transition based parsing tree as it has obvious advantage over the parsing accuracy and execution time.
 
-The parsing gives us an output tree, which we use to find the depths and relative probabilites of words present in the sentence. A glance at the output tree for the sentence 
+The parsing gives us an output tree, which we use to find the depths and relative probabilites of words present in the sentence. A glance at the output tree for the sentence.
+
+
+### Little into code,
+The above presented theory builds up a brief understanding of the overall motive.
+
+For performing the intended operations, I have written 3 scripts, namely :
+1. syntax_aware.py - has all the implementations for necessary actions round the project
+2. utility.py - some helper functions.
+3. augment.py - takes in all the functions, and executes it at a single place.
+
+
+We start by taking in the data files, **data.en** - data file containing english questions and **data.sparql** - data file containing respective SPARQL queries, which are our input to the overall program. A list for sentences present is created for respective files, and then is molded to form pairs. Inorder to create augmented data, we randomly select language pairs created initially (the user chooses the number of samples to be used). Following operaions are functional under the *utility script*.
+
+We initally sample 100 sentence pairs, and the process goes as:
+
+Example for single sentence
 > "What is the nationality of the guy gavriel kay which is also the  sovereign state of the françois langelier?"
+
+Which is the passed to the dependency tree (function from syntax_aware) which internally parses the sentences and creates a tree and then into a graph  essentially to provide us with depths for each word for the given sentence.
 
 ![Dependency parsing tree](/assets/Tree.png)
 
@@ -62,7 +80,7 @@ By getting the depth from the tree :
 >
 >[2, 1, 3, 2, 3, 5, 4, 2, 2, 3, 3, 2, 4, 0, 1]
 
-Using depths to calculate final probabilites :
+Using depths found we internally calculate final probabilites(using the formula mentioned above) and return them:
 >['What', 'is', 'the', 'nationality', 'of', 'danyon', 'loader', 'which', 'also', 'the', 'sovereign', 'state', 'waitomo', 'caves', 'hotel']
 >
 >[0.87144306, 0.7, 0.95085018, 0.87144306, 0.95085018, 1.00603215, 0.98809904, 0.87144306, 0.87144306, 0.95085018,0.95085018, 0.87144306, 0.98809904, 0.7]
@@ -70,10 +88,18 @@ Using depths to calculate final probabilites :
 Based on the length of the sentence we decide on the number of augmentations to be performed, accordingly selecting words with maximum probability "dayon" -> 1.00603215 & "loader" -> 0.98809904 (here, 2) and performing operations.
 
 ### Replacement
+We test two distinct approaches :
+1. Synonym replacemment (syntax_aware.replacement):
+* We use a list of synonyms obtained from news data over the internet, as we obtain the indices of the words we need to augment we get the lexicon for the entire sentence and perform acordingly - synonyms.
+* Uses a helper functions : get_syn_lex which returns the lexicon for the entire sentence
+* Running a set of **100 samples** for Augmentation take time : **2.70-3.10 sec** (may vary from devices)
 
+
+2. Similar word replacement (syntax_aware.word2vec_replacement)
 * Trained a word embedding (Word2Vec) on the Text8 corpus for obtaining the word vector for the selected words.
 * Made a search in the embeddings' dimensions (100-d for ours) around a fixed space with relative similar vectors.
 * Found the most similar words by comparing the cosine similarity for the vectors for words, with 1 being high and 0.5 realtively low. Selected the word with highest cosine sim. value.
+* Running a set of **100 samples** for Augmentation take time : **9.30-15.00 sec** (may vary from devices)
 
 for "loader"
 > embeddings : [ 2.87076589e-02  6.55337214e-01  1.83130503e-01  6.36373907e-02  1.72789529e-01 ... 2.46303618e-01  8.24105918e-01]
@@ -84,16 +110,21 @@ top 5 words :
 
 Following the process, we create new pair of data.
 
+
 Original Questions | Augmented Questions |
 ----------|-------------------- |
-Is william b. ochiltree a member ofof binge v. smith? | Is william b. ochiltree the membership of binge v. smith? |
+| | |
 
 
 ### Dropout 
-Pretty straight forward, using the same probabilities we drop words from the sentence. Considering the length of the sentence (threshold 13 words) we drop words accordingly.
+* Pretty straight forward (syntax_aware.dropout), using the same probabilities we drop words from the sentence. Considering the length of the sentence (threshold 13 words) we drop words accordingly.
+* Threshold refers to the length of sentence taken into consideration, if the *length < threshold* we only drop single word with highest probability.
 
 Original Questions | Augmented Questions |
 ----------|-------------------- |
-Is william b. ochiltree a member ofof binge v. smith? | Is william b. ochiltree   member ofof binge v. smith? |
-What are the sports played by the universities who also plays interscholastic league of honolulu? | What are the sports played by the universities who  plays interscholastic  of honolulu ? |
+does superstar hair challenge have more episodes **than** absolutely fabulous? |does superstar hair challenge have more episodes  absolutely fabulous?|
+does **the** new son amores series have more episodes **than** the old one? | does  new son amores series have more episodes the old one?|
+Give me **the** count of newspaper whose language is greek language and **headquartered** at syria ? | Give me  count of newspaper whose language is greek language and   at syria ?
+What is the life stance of **the** ethnic groups related to brazilian american ? | What is the life stance of   ethnic groups related to brazilian american ?
 
+Note how the 2nd, and 3rd example had to offer 13(or more)words, we dropped two words on the go.

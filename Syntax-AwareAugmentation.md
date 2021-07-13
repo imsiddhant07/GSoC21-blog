@@ -125,7 +125,7 @@ In the last example we observe, actually nothing has been replaced. Which helps 
 ### Dropout 
 * Pretty straight forward (syntax_aware.dropout), using the same probabilities we drop words from the sentence. Considering the length of the sentence (threshold 13 words) we drop words accordingly.
 * Threshold refers to the length of sentence taken into consideration, if the *length < threshold* we only drop single word with highest probability.
-* * Running a set of **100 samples** for Augmentation take time : **0.60-0.90 sec** (may vary from devices)
+* Running a set of **100 samples** for Augmentation take time : **0.60-0.90 sec** (may vary from devices)
 
 Original Questions | Augmented Questions |
 ----------|-------------------- |
@@ -138,6 +138,7 @@ Give **me** list of people who were **the** first to climb a peak in the takayam
 Note how the 2nd, and 3rd example had to offer 13(or more)words, we dropped two words on the go.
 
 overall,
+
 |||
 |--|--|
 Input | data files (data.en and data.sparql) |

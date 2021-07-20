@@ -41,7 +41,20 @@ Firstly for the preprocessing part,
 3. Converting sentences to sequences, padding accordingly
 
 Looking at these from a normal language-language translation problem, say English-German (most common) the default vocabulary size is roughly around 50K-60K which is quite scalable with today's compute.
-On the other hand our dataset, builds up a vocabulary size of 130
+On the other hand our dataset, builds up a vocabulary size of ~130K for the English lang. and ~250K for the SPARQL lang. Now, for traning the NMT the target sequences needed to be one-hot encoded in order to fit for the loss - categorical crossentropy.
+
+This simply was reshaping and creating a sparse vector for each word, from shape (1, N) -> (1, N, V) 
+: where N-length of sequence and V-size of language vocabulary. Creating such a high indiced tensor consumed a large chunk of the memory each time causing either the system to crash or you sitting watching your screen get frozen for decades :P
+
+One obvious initial solution that came to mind was to batch the sequences in order to lower the memory consumption, by encoding them right before they were given in to train the model. Tried out with various standard batching size (another hyperparameter to look out for) 128, 64, 32, and 16 all seem to make less or no difference by only delaying the inevitable crash by few moments.
+Batch size of 8 seemed to make move, but again on a later point during training (right during the 1st epoch) it again caused memory leaks and the story repeated. 
+
+After discussion with Tommaso and Anand we decided to try out subsampling the dataset in order to reduce the overall root of the problem - the huge size of vocabulary. Decided to sample 10% of the datapoints of the original dataset to test the idea. After obeserving and analyzing the dataset, every 300 examples had a overall same structure so decided to sample 10% (i.e 30) from each 300 questions. After sampling I had a scaled down version of the original dataset with ~89K pairs.
+
+Finally, after few tweaks and fixes things were on track and the training was setup.
+I decided to drop the one-hot vectors that was root to the main problem, using the sequences with tokens and changed the loss accordingly, "categorical cross entropy" -> "sparse categorical crossentropy".
+
+The training went well, but the overall quality of translations was not acceptable. Possible reasons being using a smaller dataset, unappropriate hyperparameters and overall model architecture.
 
 
 

@@ -28,8 +28,20 @@ To obtain more data we have two options:
 
 Here, 2 clearly has advantage over the quality of translations to that of 1, but lacks to add noise we expect in our data.
 
+This required creating a training pipeline for both setups. Involves following steps:
+1. Getting the data
+2. Preprocessing data
+3. Defining translation model
+4. Setting up optimiser, loss function and evaluation metrics 
 
+The steps seemed to be quite quite straightforward but, while the at a certain step I encountered an issue very common with those related to large-scale datasets.
+Firstly for the preprocessing part, 
+1. Reading the data from respective files
+2. Tokenization and building vocabulary
+3. Converting sentences to sequences, padding accordingly
 
+Looking at these from a normal language-language translation problem, say English-German (most common) the default vocabulary size is roughly around 50K-60K which is quite scalable with today's compute.
+On the other hand our dataset, builds up a vocabulary size of 130
 
 
 

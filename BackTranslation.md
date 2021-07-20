@@ -44,7 +44,9 @@ Looking at these from a normal language-language translation problem, say Englis
 On the other hand our dataset, builds up a vocabulary size of ~130K for the English lang. and ~250K for the SPARQL lang. Now, for traning the NMT the target sequences needed to be one-hot encoded in order to fit for the loss - categorical crossentropy.
 
 This simply was reshaping and creating a sparse vector for each word, from shape (1, N) -> (1, N, V) 
-: where N-length of sequence and V-size of language vocabulary. Creating such a high indiced tensor consumed a large chunk of the memory each time causing either the system to crash or you sitting watching your screen get frozen for decades :P
+: where N-length of sequence and V-size of language vocabulary. 
+
+Creating such a high indiced tensor consumed a large chunk of the memory each time causing either the system to crash or you sitting watching your screen get frozen for decades :P
 
 One obvious initial solution that came to mind was to batch the sequences in order to lower the memory consumption, by encoding them right before they were given in to train the model. Tried out with various standard batching size (another hyperparameter to look out for) 128, 64, 32, and 16 all seem to make less or no difference by only delaying the inevitable crash by few moments.
 Batch size of 8 seemed to make move, but again on a later point during training (right during the 1st epoch) it again caused memory leaks and the story repeated. 

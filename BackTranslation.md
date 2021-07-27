@@ -68,7 +68,7 @@ For instances,
 |What is the style of architecture of macfarland library ?|What is the style of place of whcih is ?|
 |Did cris vaccaro manage a club of puerto rico national football team|Did is what place is the is the the team|
 
-Clearly the tranlsation system did not generalize at all to the smaller(10%) subset of dataset we tried to use. A clear indication to the point that the number of occurences of a given named entity were way more less than expected.
+Clearly the tranlsation system did not generalize at all to the smaller(10%) subset of dataset we tried to use. A clear indication to the point that the number of occurences of a given named entity were way less than expected.
 
 After brainstorming on the issue with mentors, we were sure that the subset selection was an inaapropriate approach choosen to sub sample. Instead suggested on trying and using a continous 10% section through the dataset for subsampling.
 
@@ -114,6 +114,5 @@ In our initial 10% dataset (i.e 89640) count of occurence for each word above fo
 |day|23|
 |goodbye|2|
 
-
-
+The number makes it even clear and evident on how the count affects the overall structure of entiities and there translations.
 

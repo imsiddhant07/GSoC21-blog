@@ -58,7 +58,18 @@ I decided to drop the one-hot vectors that was root to the main problem, using t
 
 The training went well, but the overall quality of translations was not acceptable. Possible reasons being using a smaller dataset, unappropriate hyperparameters and overall model architecture.
 
+For instances,
 
+|Actual|Predcited|
+|------|---------|
+|Which place founded by party city is also the location fo katy grannan ?|Which place is the city is te also the location is the ?|
+|What television show are distributed by national geographic society?|What is the show are are by is the show ?|
+|What is the debut team of charlie fisher ?|What is the debut of of is the ?|
+|What is the style of architecture of macfarland library ?|What is the style of place of whcih is ?|
+|Did cris vaccaro manage a club of puerto rico national football team|Did is what place is the is the the team|
 
+Clearly the tranlsation system did not generalize at all to the smaller(10%) subset of dataset we tried to use. A clear indication to the point that the number of occurences of a given named entity were way more less than expected.
+
+After brainstorming on the issue with mentors, we were sure that the subset selection was an inaapropriate approach choosen to sub sample. Instead suggested on trying and using a continous 10% section through the dataset 
 
 

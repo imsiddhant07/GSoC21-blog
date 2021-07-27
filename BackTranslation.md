@@ -70,6 +70,30 @@ For instances,
 
 Clearly the tranlsation system did not generalize at all to the smaller(10%) subset of dataset we tried to use. A clear indication to the point that the number of occurences of a given named entity were way more less than expected.
 
-After brainstorming on the issue with mentors, we were sure that the subset selection was an inaapropriate approach choosen to sub sample. Instead suggested on trying and using a continous 10% section through the dataset 
+After brainstorming on the issue with mentors, we were sure that the subset selection was an inaapropriate approach choosen to sub sample. Instead suggested on trying and using a continous 10% section through the dataset for subsampling.
+
+For initial expermenting purpose, first 10% i.e. 89640 pairs were sampled. The quality of translations drastically improved from what we had obtained before. For instance:
+
+|Actual|Predicted|
+|------|---------|
+|for which label did david holmes record his first album?|for which label did david holmes record his first album|
+|give me all actors starring in movies directed by karim aïnouz|give me all actors starring in movies directed by karim aïnouz|
+|give me all actors starring in movies directed by carlos de felitta|give me all actors starring in movies directed by raymond de felitta|
+|give me all actors starring in movies directed by dee rees|give me all actors starring in movies directed by dee rees|
+|for which label did diljit dosanjh record his first album?|for which label did diljit dosanjh record his first album|
+|for which label did n. r. raghunanthan record his first album?|for which label did azam j raghunanthan record his first album|
+|does bear whisperer have more episodes than absolutely fabulous?|does bear whisperer have more episodes than absolutely fabulous|
+|does the adventures of clint and mac have more episodes than absolutely fabulous?|does the the of mac mac mac have more episodes than absolutely fabulous|
+|does the adventures of clint and mac have more episodes than absolutely fabulous?|does the the of mac mac mac have more episodes than absolutely fabulous|
+|give me all books by sterling e. lanier with more than 300 pages.|give me all books by nava macmel lanier with more than 300 pages|
+|give me all books by yaşar kemal with more than 300 pages.|give me all books by yaşar kemal with more than 300 pages|
+
+For a given sentence it generally has two name entities.
+For example:
+> predicted=[does caught say goodbye have more episodes than absolutely fabulous], actual=[does never say goodbye have more episodes than absolutely fabulous?]
+Here two main named entities in the actual data: "absolutely fabulous" and "never say goodbye"
+Predicted : "absolutely fabulous" and "caught day goodbye"
+In both cases, "absolutely famous" is correctly translated because it the base name entity during creation of examples from a template at a given point.
+Whereas "never say goodbye" occurs atmost 2 times in the entire set of given templates for above sentence which obviously is not enough for the model to generalize.
 
 

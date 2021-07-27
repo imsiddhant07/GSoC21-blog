@@ -103,6 +103,7 @@ But this just might be a broader overview to the main issue ahead of us, a given
 Considering the same example from before,
 "absolutely fabulous", "never say goodbye" and "caught day goodbye"
 In our initial 10% dataset (i.e 89640) count of occurence for each word above for actual data
+
 |word|count|
 |----|-----|
 |absolutely|300|

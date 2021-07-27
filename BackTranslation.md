@@ -84,16 +84,35 @@ For initial expermenting purpose, first 10% i.e. 89640 pairs were sampled. The q
 |for which label did n. r. raghunanthan record his first album?|for which label did azam j raghunanthan record his first album|
 |does bear whisperer have more episodes than absolutely fabulous?|does bear whisperer have more episodes than absolutely fabulous|
 |does the adventures of clint and mac have more episodes than absolutely fabulous?|does the the of mac mac mac have more episodes than absolutely fabulous|
-|does the adventures of clint and mac have more episodes than absolutely fabulous?|does the the of mac mac mac have more episodes than absolutely fabulous|
 |give me all books by sterling e. lanier with more than 300 pages.|give me all books by nava macmel lanier with more than 300 pages|
 |give me all books by yaşar kemal with more than 300 pages.|give me all books by yaşar kemal with more than 300 pages|
 
+
+
 For a given sentence it generally has two name entities.
 For example:
-> predicted=[does caught say goodbye have more episodes than absolutely fabulous], actual=[does never say goodbye have more episodes than absolutely fabulous?]
+predicted=[does caught say goodbye have more episodes than absolutely fabulous], actual=[does never say goodbye have more episodes than absolutely fabulous?]
+
 Here two main named entities in the actual data: "absolutely fabulous" and "never say goodbye"
 Predicted : "absolutely fabulous" and "caught day goodbye"
 In both cases, "absolutely famous" is correctly translated because it the base name entity during creation of examples from a template at a given point.
 Whereas "never say goodbye" occurs atmost 2 times in the entire set of given templates for above sentence which obviously is not enough for the model to generalize.
+
+But this just might be a broader overview to the main issue ahead of us, a given named entity in a question/statement might be composed of more than a single word. Thus the level of generalization our model achieves all depends on the occurence of individual words throughout the dataset.
+
+Considering the same example from before,
+"absolutely fabulous", "never say goodbye" and "caught day goodbye"
+In our initial 10% dataset (i.e 89640) count of occurence for each word above for actual data
+|word|count|
+|----|-----|
+|absolutely|300|
+|fabulous|304|
+|never|24|
+|caught|4|
+|say|122|
+|day|23|
+|goodbye|2|
+
+
 
 

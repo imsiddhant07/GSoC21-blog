@@ -116,3 +116,11 @@ In our initial 10% dataset (i.e 89640) count of occurence for each word above fo
 
 The number makes it even clear and evident on how the count affects the overall structure of entiities and there translations.
 
+
+Thus the most evident approach currently in front of us was to train and experiment with higher percentages of the original dataset as our subsets. Keeping the memory limitations in mind and not to overload the instances decided to go with 10%, 15% and 20% of the initial datapoints for sampling the subset.
+
+But for testing a common set was expected for fair evaluation amongst the models, thus the following splits were made (keep an) :
+
+|Sampling %|Original size|Sampled size|Train %|Train size|Test %|Test size|
+|----------|-------------|------------|-------|----------|------|---------|
+|10%|894499|89449|85%|76031|15%|13418|

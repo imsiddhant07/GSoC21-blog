@@ -127,9 +127,50 @@ But for testing a common set was expected for fair evaluation amongst the models
 |15% M15|894499|134174|85%|114047|15%|20127 (T2)|
 |20% M20|894499|178899|85%|157431|15%|21468 (T3)|
 
-To understand how words occured across the dataset we also tried visulizing the distribution of words. Plots for reference   
+To understand how words occured across the dataset we also tried visulizing the distribution of words. Plotting a direct word distribution would generate a clumsy and unintuitive graph which be of no help. Understanding the below plots:
 
-Each model was trained on the above mentioned samples and for the purpose of knowing the 'How good the model translates'-metrics we calulated the BLEU (Bilingual Evaluation Understudy) Score
+* Distribution for 10% sampled set
+* x axis has the number of occurences a particular word has over the given sampled set
+* y axis has the number of words for a particular number of occurences 
+* For instance there are a total of **6** words which have a total of **58** occurences 
+* Note : the distribution is not continous becuase not all unique values are present for occurences thus it would have lead to a sparse graph 
+
+![Initial plots](/assets/dis1.png)
+![ plots](/assets/dis2.png)
+![ plots](/assets/dis3.png)
+![ plots](/assets/dis4.png)
+![ plots](/assets/dis5.png)
+
+In the distribution we observe ~**17.5K** out of 36K unique words only appear **once** over the entire sampledset and are mostly the named entities or other words that significantly impact the semantic structure and meaning of sentence. 
+
+Observing over the terminating part of the plots we came across occurences of words in thousands, going upto 50084 occurence. These words were typically articles, stop words, puntuations like -> (a, the, of, is, are, from, for, what, who, does, etc.). These occurences do not directly hamper the performance or training of the model but create an initial imbalance to the dataset denying a normal distribution. Cutting down these words would be of no significant use rather would affect the performace. Thus increasing the initial would be appropriate. This left us with two possible approaches to the problem:
+
+* Duplicating the examples a minimum number of times to ensure correct translations
+* Creating new training data from the existing templates for given named entities
+
+Coming back to models we mentioned earlier,
+
+Each model was trained on the above mentioned samples and for the purpose of knowing the 'How good the model translates'-metrics we calulated the BLEU (Bilingual Evaluation Understudy) Score on the same set of examples here T1 (refer above table for more)
+
+|Model|bleu|
+|-----|----|
+|10% M10|59.78651|
+|15% M15|55.34126|
+|20% M20|74.99421|
+
+The M20 performed very well, but it has high chances a few test samples were already seen by it during its training.
+
+Thus to find a minimum number (a theshold) for occurences plotted the predicted sentences
+
+Sentence : 'does the gösebek flow into into lake'
+![ plots](/assets/min1.png)
+
+Sentence : 'what is the place of birth of the meyrick pringle kwong akmar'
+![ plots](/assets/min2.png)
+
+Sentence : "list the awards received of the person whose child is jen sagan"
+![ plots](/assets/min3.png)
+
 
 
 

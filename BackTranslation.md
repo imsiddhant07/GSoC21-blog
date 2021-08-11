@@ -123,4 +123,13 @@ But for testing a common set was expected for fair evaluation amongst the models
 
 |Sampling %|Original size|Sampled size|Train %|Train size|Test %|Test size|
 |----------|-------------|------------|-------|----------|------|---------|
-|10%|894499|89449|85%|76031|15%|13418|
+|10% M10|894499|89449|85%|76031|15%|13418 (T1)|
+|15% M15|894499|134174|85%|114047|15%|20127 (T2)|
+|20% M20|894499|178899|85%|157431|15%|21468 (T3)|
+
+To understand how words occured across the dataset we also tried visulizing the distribution of words. Plots for reference   
+
+Each model was trained on the above mentioned samples and for the purpose of knowing the 'How good the model translates'-metrics we calulated the BLEU (Bilingual Evaluation Understudy) Score
+
+
+

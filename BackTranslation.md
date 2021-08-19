@@ -121,7 +121,7 @@ Thus the most evident approach currently in front of us was to train and experim
 
 But for testing a common set was expected for fair evaluation amongst the models, thus the following splits were made (keep an) :
 
-|Sampling %|Original size|Sampled size|Train %|Train size|Test %|Test size|
+|Sampling%|Original size|Sampled size|Train%|Train size|Test%|Test size|
 |----------|-------------|------------|-------|----------|------|---------|
 |10% M10|894499|89449|85%|76031|15%|13418 (T1)|
 |15% M15|894499|134174|85%|114047|15%|20127 (T2)|

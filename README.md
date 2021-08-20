@@ -25,4 +25,4 @@ Officially starting with the coding period. The table below shall help you navig
 | Serial no. | Coding period | Updated on | Overview |
 |------------|---------------|------------|----------|
 |01.|[Syntax-Aware Augmentation](Syntax-AwareAugmentation.md)|27/06/2021|Brief project overview, Syntax Aware Augmentation|
-|02.|[Back Translation](BackTranslation.md)|11/8/2021|Hop in.|
+|02.|[Back Translation](BackTranslation.md)|20/08/2021|Hop in.|

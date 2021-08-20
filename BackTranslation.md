@@ -2,7 +2,7 @@
 
 
 
-##  Back Translation | 28/07/2021 - 
+##  Back Translation | 28/07/2021 - 20/08/2021
 
 Adding to the data augmented with Syntax-Aware we further implement Back-Translation.
 
@@ -174,3 +174,4 @@ Sentence : "list the awards received of the person whose child is jen sagan"
 
 
 
+Checkout code at, [Neural-qa](github.com/dbpedia/neural-qa) for creaating parallel corpus of training data.

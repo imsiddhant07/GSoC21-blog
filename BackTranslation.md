@@ -174,4 +174,4 @@ Sentence : "list the awards received of the person whose child is jen sagan"
 
 
 
-Checkout code at, [Neural-qa](github.com/dbpedia/neural-qa) for creaating parallel corpus of training data.
+Checkout code at, [Neural-qa](https://github.com/dbpedia/neural-qa) for creaating parallel corpus of training data.

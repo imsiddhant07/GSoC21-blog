@@ -143,6 +143,6 @@ overall,
 |--|--|
 Input | data files (data.en and data.sparql) |
 output | data files (repalced/dropped.en & .sparql)|
-|||
+
 
 check the code at [Neural-qa](https://github.com/dbpedia/neural-qa) concluding with, augmentation techniques are basically used to lend a hand to help train a machine learning model better given small size datasets. 

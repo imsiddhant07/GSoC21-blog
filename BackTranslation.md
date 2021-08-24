@@ -160,7 +160,7 @@ Each model was trained on the above mentioned samples and for the purpose of kno
 
 The M20 performed very well, but it has high chances a few test samples were already seen by it during its training.
 
-Thus to find a minimum number (a theshold) for occurences plotted the predicted sentences
+Thus to find a minimum number (a threshold) for occurences plotted the predicted sentences
 
 Sentence : 'does the gösebek flow into into lake'
 ![ plots](/assets/min1.png)
@@ -171,7 +171,7 @@ Sentence : 'what is the place of birth of the meyrick pringle kwong akmar'
 Sentence : "list the awards received of the person whose child is jen sagan"
 ![ plots](/assets/min3.png)
 
+Plotting individual sentences proved to be more or less of no help in finding out a significant value to the threshold desired. Thus decided 
 
 
-
-Checkout code at, [Neural-qa](https://github.com/dbpedia/neural-qa) for creaating parallel corpus of training data.
+Checkout code at, [Neural-qa](https://github.com/dbpedia/neural-qa) for creating parallel corpus of training data.

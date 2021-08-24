@@ -158,9 +158,9 @@ Each model was trained on the above mentioned samples and for the purpose of kno
 |15% M15|55.34126|
 |20% M20|74.99421|
 
-The M20 performed very well, but it has high chances a few test samples were already seen by it during its training.
+The M20 performed very well, but it has high chances a few test samples were already seen by it during its training. Thus to find a minimum number (a threshold) for occurences plotted the predicted sentences.
 
-Thus to find a minimum number (a threshold) for occurences plotted the predicted sentences
+*Following are the plots presented with inference on M20 model.*
 
 Sentence : 'does the gösebek flow into into lake'
 ![ plots](/assets/min1.png)
@@ -171,7 +171,31 @@ Sentence : 'what is the place of birth of the meyrick pringle kwong akmar'
 Sentence : "list the awards received of the person whose child is jen sagan"
 ![ plots](/assets/min3.png)
 
-Plotting individual sentences proved to be more or less of no help in finding out a significant value to the threshold desired. Thus decided 
+Plotting individual sentences proved to be more or less of no help in finding out a significant value to the threshold desired. Thus decided to have a collective plot for better understanding. Taking only the perfectly translated pairs are correct and rest everything as wrong.
+
+Following are distributions for a random sample of 200 pairs.
+
+![word distribution](/assets/200V1D.png)
+![word distribution accuracy](/assets/200V1A.png)
+
+* BLEU score for the particular batch of 200 sample pairs was 0.78375813
+* Following graphs are presented with a critria which takes word level translation into consideration to justify the high BLEU score.
+
+![word distribution](/assets/200V2D.png)
+![word distribution accuracy](/assets/200V2A.png)
+
+
+
+The second plot is both cases, gives in a lot of insight on how the occurence of a unique word has impact on being correctly translated by the model.
+* We observe a gradual increase over the value, indicating that a higher order of word occurence does prove to have more chances of being translated correctly but the number does not seem to have a significant variance over the distribution given only between 85% - 95% for the later plotted.
+* Increasing the sample size adds no major diference to the plots above, with slight variations of +-5% on the lower boundary.
+* Thus we can conclude for threshold as,
+
+|Accuracy|Min. instances of occurence|
+|--------|---------------------------|
+|80-85%|3-8|
+
+
 
 
 Checkout code at, [Neural-qa](https://github.com/dbpedia/neural-qa) for creating parallel corpus of training data.

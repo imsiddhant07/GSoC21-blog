@@ -24,6 +24,9 @@ For the first 3 weeks (07/06/2021 - 27/06/2021) I shall be implementing "Syntax 
 
 ## Syntax-Aware Augmentation | 07/06/2021 - 27/06/2021
 
+ 
+### *TL;DR : For the code checkout -> [repository](https://github.com/dbpedia/neural-qa/tree/gsoc-siddhant/gsoc/siddhant/DataAug/Syntax-aware).*
+
 This technique is being incorporated with the main motive of increasing the robustness and accuracy of NSpM, along with extending the existing DBNQA dataset via Augmentation.
 
 Primarily focusing on three sub techniques:
@@ -145,4 +148,4 @@ Input | data files (data.en and data.sparql) |
 output | data files (repalced/dropped.en & .sparql)|
 
 
-check the code at [Neural-qa](https://github.com/dbpedia/neural-qa) concluding with, augmentation techniques are basically used to lend a hand to help train a machine learning model better given small size datasets. 
+check the code for [Syntax-aware augmentation](https://github.com/dbpedia/neural-qa/tree/gsoc-siddhant/gsoc/siddhant/DataAug/Syntax-aware) and the entire work at *[neural-qa](https://github.com/dbpedia/neural-qa/tree/gsoc-siddhant/gsoc/siddhant)* thus to concluding with, augmentation techniques are basically used to lend a hand to help train a machine learning model better given small size datasets. 

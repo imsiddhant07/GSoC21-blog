@@ -4,6 +4,8 @@
 
 ##  Back Translation | 28/07/2021 - 20/08/2021
 
+### *TL;DR : For the code checkout -> [repository](https://github.com/dbpedia/neural-qa/tree/gsoc-siddhant/gsoc/siddhant/DataAug/BackTranslation).*
+
 Adding to the data augmented with Syntax-Aware we further implement Back-Translation.
 
 Back-translation is translating target language to source language and mixing both original source sentence and back-translated sentence to train a model. So the number of training data from source language to target language can be increased. This does both increasing the size for our dataset and adding noise to the data which inturn adds to the robustness of our translation model.
@@ -198,4 +200,4 @@ The second plot is both cases, gives in a lot of insight on how the occurence of
 
 
 
-Checkout code at, [Neural-qa](https://github.com/dbpedia/neural-qa) for creating parallel corpus of training data.
+check the code for [Back-Translation](https://github.com/dbpedia/neural-qa/tree/gsoc-siddhant/gsoc/siddhant/DataAug/BackTranslation) for creating parallel corpus of training data, and the entire work at *[neural-qa](https://github.com/dbpedia/neural-qa/tree/gsoc-siddhant/gsoc/siddhant)* 

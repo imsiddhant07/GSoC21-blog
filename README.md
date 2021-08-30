@@ -26,3 +26,6 @@ Officially starting with the coding period. The table below shall help you navig
 |------------|---------------|------------|----------|
 |01.|[Syntax-Aware Augmentation](Syntax-AwareAugmentation.md)|27/06/2021|Brief project overview, Syntax Aware Augmentation|
 |02.|[Back Translation](BackTranslation.md)|20/08/2021|Hop in.|
+
+
+### For the entire code checkout -> [repository](https://github.com/dbpedia/neural-qa/tree/gsoc-siddhant/gsoc/siddhant).
